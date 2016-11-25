@@ -1,6 +1,7 @@
 /**
  * Created by yannickvanoekelen on 25/11/16.
  */
+//Shared with Jeroen & Kristof//
 
 //Aanmaken van een array//
 var accounts = [ ];
@@ -40,6 +41,7 @@ var andrewsAccount = createAccount({
     balance: 0
 });
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //functie deposit uitvoeren op andrewsAccount, we storten 100 op dit account//
 deposit(andrewsAccount, 100);
 console.log(getBalance(andrewsAccount));
@@ -57,8 +59,8 @@ var jensAccount = createAccount({
     username: 'jen001',
     balance: 12
 });
-
 console.log(accounts);
+
 //we gaan hier de balance van jensAccount op het scherm plaatsen
 var exitingJensAccount = getAccount('jen001');
 console.log(exitingJensAccount);

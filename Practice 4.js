@@ -1,9 +1,7 @@
 /**
  * Created by yannickvanoekelen on 25/11/16.
  */
-/**
- * Created by yannickvanoekelen on 25/11/16.
- */
+//Shared with: Jeroen & Kristof //
 
 //Aanmaken van een array//
 var accounts = [ ];
@@ -27,9 +25,9 @@ function getAccount (username) {
 }
 //function deposit aanmaken om een bedrag te plaatsen op een welbepaald account
 //Deze fuctie doet ook een validatie of men daadwerkelijk een bedrag geeft
-function deposit (account, amount) {
+this.deposit = function (account, amount) {
     if (typeof amount ==="number"){
-        account.balance += amount;
+        this.balance += amount;
         console.log("The account has been filled up");
 
     }
@@ -38,9 +36,9 @@ function deposit (account, amount) {
     }
 }
 //function withdraw aanmaken om een bedrag af te halen van een welbepaald account//
-function withdraw (account, amount) {
+this.withdraw = function (account, amount) {
     if (typeof amount ==="number"){
-        account.balance -= amount;
+        this.balance -= amount;
         console.log("the amount you gave in has been withdrawn from the account");
     }
     else {
@@ -53,12 +51,12 @@ function withdraw (account, amount) {
 function getBalance (account) {
     return account.balance;
 }
-
 var andrewsAccount = createAccount({
     username: 'Andrew',
     balance: 0
 });
 
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //functie deposit uitvoeren op andrewsAccount, we storten 100 op dit account//
 deposit(andrewsAccount,100);
 console.log(getBalance(andrewsAccount));

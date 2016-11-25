@@ -2,8 +2,9 @@
  * Created by yannickvanoekelen on 25/11/16.
  */
 
-//variabele account aanmaken alsook een startbedrag plaatsen op dit acount //
+//shared with Jeroen & Kristof //
 
+//variabele account aanmaken alsook een startbedrag plaatsen op dit acount //
 var account = {
     balance: 180
 };
@@ -24,6 +25,8 @@ function withdraw (account, amount) {
 function getBalance (account) {
     return account.balance;
 }
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 //functie deposit oproepen (1000 op het account plaatsen)
 deposit(account, 1000);
 

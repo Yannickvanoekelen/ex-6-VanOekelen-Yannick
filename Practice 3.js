@@ -1,6 +1,7 @@
 /**
  * Created by yannickvanoekelen on 25/11/16.
  */
+//Shared with: Jeroen and Kristof//
 
 //Aanmaken van een array//
 var accounts = [ ];
@@ -22,8 +23,8 @@ function getAccount (username) {
 
     return matchedAccount;
 }
-//function deposit aanmaken om een bedrag te plaatsen op een welbepaald account
-//Deze fuctie doet ook een validatie of men daadwerkelijk een bedrag geeft
+//function deposit aanmaken om een bedrag te plaatsen op een welbepaald account//
+//Deze fuctie doet ook een validatie of men daadwerkelijk een bedrag geeft//
 function deposit (account, amount) {
     if (typeof amount ==="number"){
        account.balance += amount;
@@ -35,6 +36,7 @@ function deposit (account, amount) {
     }
 }
 //function withdraw aanmaken om een bedrag af te halen van een welbepaald account//
+//deze functie doet ook een validatie of men daadwerkelijk een bedrag geeft//
 function withdraw (account, amount) {
     if (typeof amount ==="number"){
         account.balance -= amount;
@@ -43,18 +45,22 @@ function withdraw (account, amount) {
         else {
             console.log("the thing you just gave in was not a number");
     }
-
-
 }
 //function getBalance aanmaken om het huidige bedrag op een welbepaalde account te verkrijgen//
-function getBalance (account) {
-    return account.balance;
+function getBalance () {
+    return function (account) {
+        return account.balance;
+    };
 }
+
 
 var andrewsAccount = createAccount({
     username: 'Andrew',
     balance: 0
 });
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
 
 //functie deposit uitvoeren op andrewsAccount, we storten 100 op dit account//
 deposit(andrewsAccount,100);
@@ -73,8 +79,8 @@ var jensAccount = createAccount({
     username: 'jen001',
     balance: 12
 });
-
 console.log(accounts);
+
 //we gaan hier de balance van jensAccount op het scherm plaatsen
 var exitingJensAccount = getAccount('jen001');
 console.log(exitingJensAccount);

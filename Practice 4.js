@@ -51,6 +51,7 @@ this.withdraw = function (account, amount) {
 function getBalance (account) {
     return account.balance;
 }
+
 var andrewsAccount = createAccount({
     username: 'Andrew',
     balance: 0

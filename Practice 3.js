@@ -12,17 +12,18 @@ function createAccount (account) {
     return account;
 }
 //function getAccount aanmaken om welbepaalde account op te vragen uit array//
-function getAccount (username) {
+//function get account is gebasseerd op de methode van Luc met de forEach deze is aangepast met een while//
+function getAccount(username) {
+    var i = 0;
     var matchedAccount;
-
-    accounts.forEach( function (internal_account) {
-        if (internal_account.username === username) {
-            matchedAccount = internal_account;
-        }
-    } );
-
+    while (i < accounts.length) {
+        if (accounts[i].name === username)
+            matchedAccount = accounts[i].name + " : " + accounts[i].balance + " AmountInEuro";
+        i++;
+    }
     return matchedAccount;
 }
+
 //function deposit aanmaken om een bedrag te plaatsen op een welbepaald account//
 //Deze fuctie doet ook een validatie of men daadwerkelijk een bedrag geeft//
 function deposit (account, amount) {
@@ -52,7 +53,8 @@ function getBalance () {
         return account.balance;
     };
 }
-
+var balance = getBalance();
+console.log(balance(accounts));
 
 var andrewsAccount = createAccount({
     username: 'Andrew',

@@ -54,23 +54,20 @@ function getAccount(username) {
     var i = 0;
     var matchedAccount;
     while (i < accounts.length) {
-        if (accounts[i].name === username)
-            matchedAccount = accounts[i].name + " : " + accounts[i].balance + " Euro";
+        if (accounts[i].username === username)
+            matchedAccount = accounts[i].username + " : " + accounts[i].balance + " Euro";
         i++;
     }
     return matchedAccount;
 }
 ;
 
-var accountAndrew = {username: 'Andrew',
-    balance: 0};
+//----------------------------------------------------------------------------------------------------------------//
 
+var accountAndrew = {username: 'Andrew', balance: 0};
 createAccount(accountAndrew);
-
-
-getBalance(accounts);
-
-
+var balance = getBalance();
+    console.log(balance(accounts[0]));
 deposit(accounts[0], 2);
 withdraw(accounts[0], 55);
 console.log(getAccount("Andrew"));

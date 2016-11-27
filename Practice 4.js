@@ -9,9 +9,6 @@ var accounts = [];
 
 //}
 
-//var bal = getBalance();
-//console.log(bal(accounts[0]));
-
 
 //function getBalance aanmaken om het huidige bedrag op een welbepaalde account te verkrijgen//
 function getBalance() {
@@ -26,11 +23,11 @@ function getBalance() {
 //var account nodig voor de functies in het object te kunnen plaatsen
 var accounts = function (name, balance) {
     this.name = name;
-    this.balance = 0;
+    this.balance = balance;
 
 //function deposit aanmaken om een bedrag te plaatsen op een welbepaald account//
 //Deze fuctie doet ook een validatie of men daadwerkelijk een bedrag geeft//
-this.deposit = function(account, amount) {
+this.deposit = function(amount) {
     if (typeof amount === "number") {
         this.balance += amount;
         console.log("The account has been filled up with " + amount + " and has now " + account.balance + " Euro ");
@@ -41,7 +38,7 @@ this.deposit = function(account, amount) {
 }
 //function withdraw aanmaken om een bedrag af te halen van een welbepaald account//
 //deze functie doet ook een validatie of men daadwerkelijk een bedrag geeft//
-this.withdraw = function(account, amount) {
+this.withdraw = function(amount) {
     if (typeof amount === "number") {
         this.balance -= amount;
         console.log("Some money with the amount of " + amount + " has been withdrawn from the account it has now " + account.balance + " Euro left ");
@@ -70,12 +67,9 @@ function getAccount(username) {
 
 //----------------------------------------------------------------------------------------------------------------//
 
-var accountAndrew = {username: 'Andrew', balance: 0};
+
+var accountAndrew = new accounts ("Andrew",0);
 createAccount(accountAndrew);
+accountAndrew.deposit(500);
 var balance = getBalance();
 console.log(balance(accounts[0]));
-deposit(accounts[0], 2);
-withdraw(accounts[0], 55);
-console.log(getAccount("Andrew"));
-
-

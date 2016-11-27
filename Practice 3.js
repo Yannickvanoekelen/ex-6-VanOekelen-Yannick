@@ -3,6 +3,7 @@
  * Created by yannickvanoekelen on 25/11/16.
  */
 //Shared with: Jeroen and Kristof//
+//Jeroen vdb heeft geholpen bij sommige moeilijkheden in het process
 
 //Aanmaken van een array//
 var accounts = [];

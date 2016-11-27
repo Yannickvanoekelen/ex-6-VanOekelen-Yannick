@@ -21,32 +21,32 @@ function getBalance() {
 ;
 
 //var account nodig voor de functies in het object te kunnen plaatsen
-var accounts = function (name, balance) {
+var account = function (name, balance) {
     this.name = name;
     this.balance = balance;
 
 //function deposit aanmaken om een bedrag te plaatsen op een welbepaald account//
 //Deze fuctie doet ook een validatie of men daadwerkelijk een bedrag geeft//
-this.deposit = function(amount) {
-    if (typeof amount === "number") {
-        this.balance += amount;
-        console.log("The account has been filled up with " + amount + " and has now " + account.balance + " Euro ");
+    this.deposit = function(amount) {
+        if (typeof amount === "number") {
+            this.balance += amount;
+            console.log("The account has been filled up with " + amount + " and has now " + this.balance + " Euro ");
 
-    } else {
-        console.log("the thing you just gave in was not a number");
+        } else {
+            console.log("the thing you just gave in was not a number");
+        }
     }
-}
 //function withdraw aanmaken om een bedrag af te halen van een welbepaald account//
 //deze functie doet ook een validatie of men daadwerkelijk een bedrag geeft//
-this.withdraw = function(amount) {
-    if (typeof amount === "number") {
-        this.balance -= amount;
-        console.log("Some money with the amount of " + amount + " has been withdrawn from the account it has now " + account.balance + " Euro left ");
-    } else {
-        console.log("the thing you just gave in was not a number");
-    }
-}
+    this.withdraw = function(amount) {
+        if (typeof amount === "number") {
+            this.balance -= amount;
+            console.log("Some money with the amount of " + amount + " has been withdrawn from the account it has now " + this.balance + " Euro left ");
+        } else {
+            console.log("the thing you just gave in was not a number");
+        }
     };
+};
 //function createAccount aanmaken om een account aan te maken en te plaatsen in de array//
 function createAccount(account) {
     accounts.push(account);
@@ -65,11 +65,14 @@ function getAccount(username) {
     return matchedAccount;
 };
 
-//----------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------
+//
 
 
-var accountAndrew = new accounts ("Andrew",0);
+
+var accountAndrew = new account ("Andrew",0);
 createAccount(accountAndrew);
 accountAndrew.deposit(500);
+accountAndrew.withdraw(100);
 var balance = getBalance();
 console.log(balance(accounts[0]));
